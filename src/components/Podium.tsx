@@ -5,14 +5,15 @@ import { useRanking } from "../hooks/useRanking"
 import { Link } from "react-router-dom"
 
 const PodiumStyled = styled.section`
-    margin-top: 4rem;
+    width: 90%;
+    margin: 4rem auto;
     display: flex;
     gap: 0.6rem;
     justify-content: center;
 
     & a {
         color: white;
-        width: 6rem;
+        width: 100%;
         display: grid;
         gap: 0.6rem;
         align-self: end;
@@ -60,15 +61,15 @@ const PodiumStyled = styled.section`
 
         .podium {
             &--1 {
-                height: 7rem;
+                height: 8.3rem;
             }
 
             &--2 {
-                height: 4.5rem;
+                height: 5.5rem;
             }
 
             &--3 {
-                height: 3.5rem;
+                height: 3.8rem;
             }
         }
 
