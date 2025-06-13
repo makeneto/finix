@@ -47,7 +47,7 @@ const HomeStyled = styled.main`
                 gap: 0.8rem;
 
                 & input {
-                    width: 15rem;
+                    width: 16rem;
                     border-radius: 0.6rem;
                     padding: 0.9rem 1.4rem;
                     font-size: 1.1rem;
@@ -114,7 +114,7 @@ type PlayersProps = {
 const Players = styled.section<PlayersProps>`
     background: white;
     color: black;
-    width: 80%;
+    width: 84%;
     max-height: 36%;
     position: fixed;
     top: 58%;
