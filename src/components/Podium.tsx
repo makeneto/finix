@@ -26,8 +26,8 @@ const PodiumStyled = styled.section`
 
             & img {
                 background-color: white;
-                width: 4.4rem;
-                height: 4.4rem;
+                width: 5.2rem;
+                height: 5.2rem;
                 object-fit: cover;
                 object-position: top center;
                 border-radius: 50%;
