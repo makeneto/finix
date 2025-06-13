@@ -69,6 +69,7 @@ const HomeStyled = styled.main`
             }
 
             & button {
+                background-color: white;
                 width: 3rem;
                 height: 3rem;
                 border-radius: 50%;
