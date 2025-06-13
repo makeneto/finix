@@ -1,0 +1,100 @@
+@import url(https://fonts.googleapis.com/css?family=Inter:100,200,300,regular,500,600,700,800,900,100italic,200italic,300italic,italic,500italic,600italic,700italic,800italic,900italic);
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  background-color: black;
+  color: white;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 500;
+}
+
+a,
+button {
+  cursor: pointer;
+}
+
+a {
+  text-decoration: none;
+}
+
+button {
+  border: none;
+}
+
+input {
+  outline: none;
+}
+
+input:disabled {
+  cursor: default;
+}
+
+.container {
+  --uib-size: 45px;
+  --uib-color: white;
+  --uib-speed: 1.75s;
+  --uib-bg-opacity: .1;
+  height: 2.5rem;
+  width: 100%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transform-origin: center;
+  overflow: visible;
+}
+
+.car {
+  stroke: var(--uib-color);
+  stroke-dasharray: 100;
+  stroke-dashoffset: 0;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  animation: travel var(--uib-speed) ease-in-out infinite, fade var(--uib-speed) ease-out infinite;
+  will-change: stroke-dasharray, stroke-dashoffset;
+  transition: stroke 0.5s ease;
+}
+
+.track {
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke: var(--uib-color);
+  opacity: var(--uib-bg-opacity);
+}
+
+@keyframes travel {
+  0% {
+    stroke-dashoffset: 100;
+  }
+  75% {
+    stroke-dashoffset: 0;
+  }
+}
+@keyframes fade {
+  0% {
+    opacity: 0;
+  }
+  20%, 55% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+.loser {
+  color: gray !important;
+}
+
+/*# sourceMappingURL=index.css.map */
