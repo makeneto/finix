@@ -9,10 +9,14 @@ import type { Player } from "../components/ProfileInfo"
 import { useMatches } from "../hooks/useMatches"
 
 const GamerInfoStyled = styled.section`
+    background-color: #111517;
+
     display: flex;
     align-items: center;
     justify-content: space-between;
-    margin-top: 2rem;
+    padding: 1.1rem 1.6rem;
+    border-radius: 1rem;
+    margin-top: 3rem;
 
     & div {
         display: grid;
