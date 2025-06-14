@@ -119,13 +119,20 @@ export default function Match() {
         (match) => match.home === player.name || match.away === player.name
     )
 
+    console.log(playerMatches);
+    
+
     return (
         <MatchStyled>
             {playerMatches.map((match) => {
                 const homeIsLoser =
-                    match.completed && match.goalsHome < match.goalsAway
+                    match.completed &&
+                    (match.goalsHome < match.goalsAway ||
+                        match.goalsHome === match.goalsAway)
                 const awayIsLoser =
-                    match.completed && match.goalsAway < match.goalsHome
+                    match.completed &&
+                    (match.goalsAway < match.goalsHome ||
+                        match.goalsHome === match.goalsAway)
 
                 return (
                     <div key={match.id}>

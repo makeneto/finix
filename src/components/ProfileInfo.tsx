@@ -1,10 +1,11 @@
-import { useEffect, useRef, useState } from "react"
+import { useRef } from "react"
 import styled from "styled-components"
-import { Link, useParams } from "react-router-dom"
+import { Link } from "react-router-dom"
 import { motion } from "framer-motion"
 
 import { useRanking } from "../hooks/useRanking"
 import { ordinalSuffix } from "../utils/ordinalSuffix"
+import { usePlayers } from "../hooks/usePlayers"
 
 const ProfileInfoStyled = styled.div`
     display: flex;
@@ -16,10 +17,6 @@ const ProfileInfoStyled = styled.div`
         height: 5rem;
         border-radius: 50%;
         background-color: #ffffff;
-    }
-
-    & h1 {
-        text-transform: capitalize;
     }
 
     & > div:first-child {
@@ -54,14 +51,23 @@ const ProfileInfoStyled = styled.div`
         display: grid;
         gap: 0.5rem;
 
-        & input {
+        & h1 {
             font-size: 1.7rem;
+            text-transform: capitalize;
+
+            & img {
+                width: 0.9rem;
+                height: 0.9rem;
+            }
+        }
+
+        /* & input {
             text-transform: capitalize;
             background-color: transparent;
             color: white;
             width: 100%;
             border: none;
-        }
+        } */
 
         & a {
             color: #dbdbdb;
@@ -81,23 +87,13 @@ export type Player = {
 }
 
 export default function ProfileInfo() {
-    const { id } = useParams<{ id: string }>()
-    const [player, setPlayer] = useState<Player | null>(null)
+    const { player, setPlayer } = usePlayers()
     const fileInputRef = useRef<HTMLInputElement>(null)
     const ranking = useRanking()
 
     const rankingIndex = player
         ? ranking.findIndex((r) => r.id === player.id)
         : -1
-
-    useEffect(() => {
-        if (!id) return
-        const stored: Player[] = JSON.parse(
-            localStorage.getItem("players") || "[]"
-        )
-        const found = stored.find((p) => p.id === id)
-        setPlayer(found || null)
-    }, [id])
 
     const handleImageClick = () => {
         fileInputRef.current?.click()
@@ -106,6 +102,13 @@ export default function ProfileInfo() {
     const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         const file = e.target.files?.[0]
         if (!file || !player) return
+
+        if (file.name.endsWith(".heic")) {
+            alert(
+                "Format .Hheic not supported.Please select a .JPG or .png image."
+            )
+            return
+        }
 
         const reader = new FileReader()
         reader.onload = () => {
@@ -164,7 +167,7 @@ export default function ProfileInfo() {
                 animate={{ opacity: 1 }}
                 transition={{ duration: 0.3, ease: "easeOut" }}
             >
-                <input
+                {/* <input
                     type="text"
                     value={player.name || ""}
                     autoComplete="off"
@@ -184,7 +187,19 @@ export default function ProfileInfo() {
                             JSON.stringify(updatedPlayers)
                         )
                     }}
-                />
+                /> */}
+
+                <h1>
+                    {player.name}
+                    {(player.name === "makene" ||
+                        player.name === "makenedev") && (
+                        <img
+                            src="/assets/verified-icon.png"
+                            alt="Verified Icon"
+                        />
+                    )}
+                </h1>
+
                 <Link
                     to={
                         ranking.length > 1 ? "/ranking" : `/player/${player.id}`

@@ -36,10 +36,19 @@ const PodiumStyled = styled.section`
             }
 
             & span {
-                font-size: 1.7rem;
                 position: absolute;
-                bottom: -4%;
-                right: -4%;
+            }
+
+            .trophy {
+                font-size: 2rem;
+                bottom: 0;
+                right: -10%;
+            }
+
+            .medal {
+                font-size: 1.4rem;
+                bottom: 0%;
+                right: 8%;
             }
         }
 
@@ -118,11 +127,17 @@ export default function Podium() {
                                     }
                                     alt={p.name}
                                 />
-                                <span>{medals[idx]}</span>
+                                <span
+                                    className={idx === 1 ? "trophy" : "medal"}
+                                >
+                                    {medals[idx]}
+                                </span>
                             </article>
+
                             <div className={podiumClass[idx]}>
                                 <span>{position[idx]}</span>
                             </div>
+
                             <p>{p.name}</p>
                         </Link>
                     )

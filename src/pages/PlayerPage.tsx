@@ -53,7 +53,7 @@ const BackLink = styled(Link)`
 `
 
 const InfoBox = styled.section`
-    padding: 2rem;
+    padding: 2rem 1rem;
     max-width: 500px;
     margin: 0 auto;
     backdrop-filter: blur(0) brightness(100%);
@@ -80,7 +80,7 @@ const InfoBox = styled.section`
 `
 
 const Matches = styled.section`
-    margin-top: 5.6rem;
+    margin-top: 3rem;
 `
 
 const MatchesContainer = styled.section`
