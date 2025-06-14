@@ -194,7 +194,7 @@ export default function ProfileInfo() {
                     {(player.name === "makene" ||
                         player.name === "makenedev") && (
                         <img
-                            src="/assets/verified-icon.png"
+                            src="/assets/verified-icon.webp"
                             alt="Verified Icon"
                         />
                     )}
