@@ -1,5 +1,5 @@
-## 🎮 Finix – Desafios e Rankings de Games Competitivos
+## 🎮 Finix – Competitive Gaming Challenges and Rankings
 
-Finix é uma aplicação web desenvolvida para jogadores competitivos que desejam disputar rankings e demonstrar sua habilidade em jogos como FC25, NBA 2K25, Madden NFL e muito mais. Com um ambiente intuitivo, seguro e envolvente, Finix conecta jogadores e registra vitórias em tempo real.
+Finix is a web application developed for competitive gamers who want to compete in rankings and demonstrate their skills in games like FC25, NBA 2K25, Madden NFL, and more. With an intuitive, secure, and engaging environment, Finix connects players and records victories in real time.
 
 ![Image](https://github.com/user-attachments/assets/abf42506-83fd-434c-8ea4-5f944f0732b7)
